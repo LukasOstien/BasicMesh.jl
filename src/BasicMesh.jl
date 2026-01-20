@@ -3,6 +3,7 @@ using Plots
 using MeshGrid
 using StatsBase
 # Write your package code here.
+export circlemesh, displayMesh, enforceGeometry, findBoundary, hexagon, squaremesh, uniformrefine, uniformrefineCircle 
     function circlemesh(xc, yc, radius, h)
 
         # Generate a Hexagon, then refine some times
