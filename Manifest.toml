@@ -1,0 +1,10 @@
+# This file is machine-generated - editing it directly is not advised
+
+julia_version = "1.12.1"
+manifest_format = "2.0"
+project_hash = "c03c365836a8b87e029fc6c7a91e6264f0ed0d8d"
+
+[[deps.BasicMesh]]
+path = "."
+uuid = "5ba12469-52ae-495e-a2c1-ff3b69a1384d"
+version = "1.0.0-DEV"
