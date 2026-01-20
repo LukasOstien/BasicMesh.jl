@@ -177,4 +177,11 @@ using StatsBase
         
         return sortA,j
     end
+
+    function uniformrefineCircle(node,elem,R)
+        node2,elem2,HB, = uniformrefine(node,elem);
+        node2 = enforceGeometry(node2,elem2,R);
+        return node2,elem2,HB
+    end
+
 end
