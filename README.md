@@ -26,7 +26,8 @@ The results should look like this: <br>
 To refine meshes, call the appropirate refining function, and display to see the results:
 ```julia
 fnode,felems,HBs = uniformrefine(node,elems);
-fcnode,fcelems,HBc = uniformrefineCircle(cnode,celems,R) # For consistency, use the same R you called in the circlemesh() subroutine.
+# For consistency, use the same R you called in the circlemesh() subroutine.
+fcnode,fcelems,HBc = uniformrefineCircle(cnode,celems,R); 
 fs = displayMesh(fnode,felems);
 fc = displayMesh(fcnode,fcelems);
 dislpay(fs)
