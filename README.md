@@ -8,6 +8,7 @@ using Pkg; Pkg.add("BasicMesh")
 ```
 To generate a mesh, use wither the squaremesh() or circlemesh() functions as follows:
 ```julia
+using BasicMesh
 ## For a rectangle, describe the box by supplying xmin, xmax, ymin, ymax, and the subinterval length:
 box = [0,1,0,1] # square in [0,1]^2
 node,elems = squaremesh(box,0.25);
