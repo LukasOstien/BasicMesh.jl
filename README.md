@@ -1,5 +1,5 @@
 # BasicMesh
-[![Coverage](https://codecov.io/gh/LukasOstien/BasicMesh.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/LukasOstien/BasicMesh.jl)
+[![Coverage](https://codecov.io/gh/LukasOstien/BasicMesh.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/LukasOstien/BasicMesh.jl) <br>
 This package aims to generate uniform meshes for user defined shapes. At this moment in time the package can develop meshes for rectangles and circles, and can uniformly refine down meshes, shown below: <br>
 To add this package, use the following command:
 ```julia
