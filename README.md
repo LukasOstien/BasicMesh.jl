@@ -6,7 +6,7 @@ To add this package, use the following command:
 ```julia
 using Pkg; Pkg.add("BasicMesh")
 ```
-To generate a mesh, use wither the squaremesh() or circlemesh() functions as follows:
+To generate a mesh, use either the squaremesh() or circlemesh() functions as follows:
 ```julia
 using BasicMesh
 ## For a rectangle, describe the box by supplying xmin, xmax, ymin, ymax, and the subinterval length:
