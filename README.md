@@ -1,4 +1,5 @@
 # BasicMesh
+[![Coverage](https://codecov.io/gh/LukasOstien/BasicMesh.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/LukasOstien/BasicMesh.jl)
 This package aims to generate uniform meshes for user defined shapes. At this moment in time the package can develop meshes for rectangles and circles, and can uniformly refine down meshes, shown below: <br>
 To add this package, use the following command:
 ```julia
@@ -38,4 +39,3 @@ The refining functions supply a matrix that maps fine level indices HB[:,1] and 
 
 This project is inspired by the much more sophisticated library for MATLAB, [iFem](https://github.com/lyc102/ifem), written by Long Chen, a professor I had the privilege of having when taking a PDEs class at UC Irvine. <br>
 [![Build Status](https://github.com/LukasOstien/BasicMesh.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/LukasOstien/BasicMesh.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/LukasOstien/BasicMesh.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/LukasOstien/BasicMesh.jl)
