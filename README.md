@@ -20,7 +20,7 @@ If you are interested in displaying the mesh:
 ```julia
 s = displayMesh(node,elems);
 c = displayMesh(cnode,celems);
-display(p)
+display(s)
 display(c)
 ```
 The results should look like this: <br>
