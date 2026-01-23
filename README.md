@@ -38,5 +38,5 @@ display(fc)
 ``` 
 ![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/plot_2.png) ![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/plot_4.png) <br>
 The refining functions supply a matrix that maps fine level indices HB[:,1] and relates them to corresponding coarse level indices HB[:,2:3], which is quite useful in multigrid settings. <br>
-
+In the future, additional features, such as connecting different geometries together, are sought out and are currently in development. <br>
 This project is inspired by the much more sophisticated library for MATLAB, [iFem](https://github.com/lyc102/ifem), written by Long Chen, a professor I had the privilege of having when taking a PDEs class at UC Irvine. <br>
