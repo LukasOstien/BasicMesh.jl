@@ -15,7 +15,7 @@ node,elems = squaremesh(box,0.25);
 
 ## For a circle, supply the center coordinate, the radius, and the subinterval length:
 R = 1;
-cnode,celems = circlemesh(0,0,R,0.25) # Circle at (0,0) with radius of 1 with subinterval length of ~0.25
+cnode,celems = circlemesh(0,0,R,0.25); # Circle at (0,0) with radius of 1 with subinterval length of ~0.25
 ```
 If you are interested in displaying the mesh:
 ```julia
