@@ -39,7 +39,7 @@ display(fc)
 ``` 
 ![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/plot_2.png) ![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/plot_4.png) <br>
 The refining functions supply a matrix that maps fine level indices HB[:,1] and relates them to corresponding coarse level indices HB[:,2:3], which is quite useful in multigrid settings. <br>
-A function to assert circular nodal placement can be used when choosing the octagon based circular mesh.
+A function to assert circular nodal placement can be used when choosing the octagon based circular mesh. It would also be necessary to call it after a uniform refinement, too.
 ```julia
 cnode,celems = circlemesh(0,0,R,0.25,2);
 cnode = enforceCircleAll(cnode); # Use ONLY if your circular mesh was based off an octagon.
