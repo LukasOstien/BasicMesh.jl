@@ -1,6 +1,6 @@
 name = "BasicMesh"
 uuid = "5ba12469-52ae-495e-a2c1-ff3b69a1384d"
-version = "1.1.0"
+version = "1.1.1"
 authors = ["LukasOstien <lukas.ostien@gmail.com> and contributors"]
 
 [deps]
