@@ -15,7 +15,9 @@ node,elems = squaremesh(box,0.25);
 
 ## For a circle, supply the center coordinate, the radius, and the subinterval length:
 R = 1;
-cnode,celems = circlemesh(0,0,R,0.25); # Circle at (0,0) with radius of 1 with subinterval length of ~0.25
+cnode,celems = circlemesh(0,0,R,0.25,1); # Circle at (0,0) with radius of 1 with subinterval length of ~0.25
+# the parameter at the end is a flag to determine which reference polygon you want to have to define your circle.
+# A supplied 1 will use a hexagon, while a 2 will use an octagon.
 ```
 If you are interested in displaying the mesh:
 ```julia
@@ -29,8 +31,7 @@ The results should look like this: <br>
 To refine meshes, call the appropirate refining function, and display to see the results:
 ```julia
 fnode,felems,HBs = uniformrefine(node,elems);
-# For consistency, use the same R you called in the circlemesh() subroutine.
-fcnode,fcelems,HBc = uniformrefineCircle(cnode,celems,R); 
+fcnode,fcelems,HBc = uniformrefineCircle(cnode,celems); 
 fs = displayMesh(fnode,felems);
 fc = displayMesh(fcnode,fcelems);
 dislpay(fs)
@@ -38,5 +39,11 @@ display(fc)
 ``` 
 ![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/plot_2.png) ![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/plot_4.png) <br>
 The refining functions supply a matrix that maps fine level indices HB[:,1] and relates them to corresponding coarse level indices HB[:,2:3], which is quite useful in multigrid settings. <br>
+A function to assert circular nodal placement can be used when choosing the octagon based circular mesh.
+```julia
+cnode,celems = circlemesh(0,0,R,0.25,2);
+cnode = enforceCircleAll(cnode); # Use ONLY if your circular mesh was based off an octagon.
+```
+
 In the future, additional features, such as connecting different geometries together, are sought out and are currently in development. <br>
 This project is inspired by the much more sophisticated library for MATLAB, [iFem](https://github.com/lyc102/ifem), written by Long Chen, a professor I had the privilege of having when taking a PDEs class at UC Irvine. <br>
