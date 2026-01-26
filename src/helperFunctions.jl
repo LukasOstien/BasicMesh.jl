@@ -81,7 +81,7 @@ function enforceCircleAll(node)
 end
 
 function displayMesh(node,elem)
-    p = plot(size=(800, 600), aspect_ratio=:equal, legend=false)
+    p = plot(size=(400, 300), aspect_ratio=:equal, legend=false)
     
     # Plot triangles
     nelm = size(elem, 1);
