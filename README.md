@@ -1,7 +1,7 @@
 # BasicMesh
 [![Build Status](https://github.com/LukasOstien/BasicMesh.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/LukasOstien/BasicMesh.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/LukasOstien/BasicMesh.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/LukasOstien/BasicMesh.jl) <br>
-This package aims to generate uniform meshes for user defined shapes in Julia. At this moment in time the package can develop meshes for rectangles and circles, and can uniformly refine down meshes, shown below: <br>
+This package aims to generate uniform meshes for user defined shapes in Julia. At this moment in time the package can develop meshes for rectangles and circles, and can uniformly refine down meshes, shown below. <br>
 To add this package, use the following command:
 ```julia
 using Pkg; Pkg.add("BasicMesh")
@@ -39,11 +39,11 @@ display(fc)
 ``` 
 ![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/plot_2.png) ![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/plot_4.png) <br>
 The refining functions supply a matrix that maps fine level indices HB[:,1] and relates them to corresponding coarse level indices HB[:,2:3], which is quite useful in multigrid settings. <br>
-A function to assert circular nodal placement can be used when choosing the octagon based circular mesh. It would also be necessary to call it after a uniform refinement, too.
+A function to assert circular nodal placement can be used when choosing a circular mesh. The differences of the two meshes are compared. For consistency, it is best if you call enforceCircleAll() after each refinement to avoid breaking the structure of the mesh.
 ```julia
-cnode,celems = circlemesh(0,0,R,0.25,2);
-cnode = enforceCircleAll(cnode); # Use ONLY if your circular mesh was based off an octagon.
+cnode,celems = circlemesh(0,0,R,0.25,1);
+cnode = enforceCircleAll(cnode); 
 ```
-
-In the future, additional features, such as connecting different geometries together, are sought out and are currently in development. <br>
+![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/notRounded.png) ![](https://github.com/LukasOstien/BasicMesh.jl/blob/main/images/rounded.png) <br>
+In the future, additional features, such as connecting different geometries together, are sought out and are currently in development. <br> <br>
 This project is inspired by the much more sophisticated library for MATLAB, [iFem](https://github.com/lyc102/ifem), written by Long Chen, a professor I had the privilege of having when taking a PDEs class at UC Irvine. <br>
