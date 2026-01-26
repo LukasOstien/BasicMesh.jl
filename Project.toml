@@ -1,6 +1,6 @@
 name = "BasicMesh"
 uuid = "5ba12469-52ae-495e-a2c1-ff3b69a1384d"
-version = "1.0.0"
+version = "1.1.0"
 authors = ["LukasOstien <lukas.ostien@gmail.com> and contributors"]
 
 [deps]
@@ -9,10 +9,10 @@ Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 
 [compat]
-MeshGrid = "1.0.3"
-Plots = "1.41.4"
-StatsBase = "0.34.10"
-julia = "1.12"
+MeshGrid = "1"
+Plots = "1"
+StatsBase = "0.34"
+julia = "1.6"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
