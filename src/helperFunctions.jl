@@ -80,19 +80,33 @@ function enforceCircleAll(node)
         return node
 end
 
-function displayMesh(node,elem)
+function displayMesh(node, elem)
     p = plot(size=(400, 300), aspect_ratio=:equal, legend=false)
-    
-    # Plot triangles
-    nelm = size(elem, 1);
+
+    nelm = size(elem, 1)
+
+    # Shade each triangle once
     for i in 1:nelm
         tri = node[elem[i,:], :]
-        # Close the triangle
-        tri_closed = vcat(tri, tri[1:1,:])
-        plot!(p, tri_closed[:,1], tri_closed[:,2])
+        plot!(p, Shape(tri[:,1], tri[:,2]), fillalpha=0.3, fillcolor=:blue, linewidth=0)
     end
-    
-    # Plot nodes
-    scatter!(p, node[:,1], node[:,2])
+
+    # Collect unique edges using a Set of sorted node-index pairs
+    edges = Set{Tuple{Int,Int}}()
+    for i in 1:nelm
+        ns = elem[i,:]
+        n  = length(ns)
+        for j in 1:n
+            a, b = ns[j], ns[mod1(j+1, n)]
+            push!(edges, (min(a,b), max(a,b)))   # canonical order prevents duplicates
+        end
+    end
+
+    # Plot each unique edge exactly once
+    for (a, b) in edges
+        plot!(p, [node[a,1], node[b,1]], [node[a,2], node[b,2]],
+              color=:black, linewidth=0.5)
+    end
+
     return p
 end
