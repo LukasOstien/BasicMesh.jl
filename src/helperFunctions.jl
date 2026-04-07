@@ -54,12 +54,18 @@ function uniqueElems(A)
     return sortA,j
 end
 
-function enforceGeometry(node,elem)
-    R = node[2,1];
-    bdNode,~ = findBoundary(elem);
-    r = sqrt.(node[bdNode,1].^2+node[bdNode,2].^2);
-    node[bdNode,1]=R*node[bdNode,1]./r;
-    node[bdNode,2]=R*node[bdNode,2]./r;
+function enforceGeometry(node, elem)
+    # Node 1 is always the center; derive center and radius from the mesh itself
+    xc = node[1, 1]
+    yc = node[1, 2]
+    R = sqrt((node[2, 1] - xc)^2 + (node[2, 2] - yc)^2)
+    bdNode, ~ = findBoundary(elem)
+    # Compute displacement from center, not from origin
+    dx = node[bdNode, 1] .- xc
+    dy = node[bdNode, 2] .- yc
+    r  = sqrt.(dx.^2 .+ dy.^2)
+    node[bdNode, 1] = xc .+ R .* dx ./ r
+    node[bdNode, 2] = yc .+ R .* dy ./ r
     return node
 end
 
